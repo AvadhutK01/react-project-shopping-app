@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react'
 
 const CartComponent = () => {
 
-    const [totalAmount, setTotalAmount] = useState(0);
+    // const [totalAmount, setTotalAmount] = useState(0);
 
-    useEffect(() => {
-        setTotalAmount(cartProducts.reduce((total, product) => total + product.price, 0));
-    }, [cartProducts])
+    // useEffect(() => {
+    //     setTotalAmount(cartProducts.reduce((total, product) => total + product.price, 0));
+    // }, [cartProducts])
 
-    const incrementQuantity = (Id, size) => {
+    // const incrementQuantity = (Id, size) => {
 
-    }
+    // }
 
-    const decrementQuantity = (Id, size) => {
+    // const decrementQuantity = (Id, size) => {
 
-    }
+    // }
 
     return (
         <>
-            <ul>
+            {/* <ul>
                 {cartProducts.map((product) => (
                     <li key={product.Id}>
                         <div className='ms-5'>{product.quantity}x {product.name} - {product.size}</div>
@@ -37,6 +37,7 @@ const CartComponent = () => {
                 ))}
             </ul>
             <div className="total">Total: र{totalAmount}</div>
+        </> */}
         </>
     )
 }

@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import productContext from '../../../context/ProductContext';
 
 const ProductItems = ({ product }) => {
+
+    const productCtx = useContext(productContext);
 
     const [quantity, setQuantity] = useState(0);
 
@@ -18,6 +21,15 @@ const ProductItems = ({ product }) => {
     const handleSizeChange = (e) => {
         setSelectedSize(e.target.value);
     };
+
+    const handleCartSubmit = (productId) => {
+        if (selectedSize !== '' && quantity > 0) {
+            productCtx.decreaseStocks(productId, selectedSize, quantity);
+        }
+        setQuantity(0);
+        setSelectedSize('');
+    }
+
 
     return (
         <div className="product-item">
@@ -67,7 +79,7 @@ const ProductItems = ({ product }) => {
                         ))}
                     </select>
                 </div>
-                <button type="button" className="add-to-cart">Add To Cart</button>
+                <button type="button" className="add-to-cart" onClick={() => handleCartSubmit(product.id)}>Add To Cart</button>
             </div>
         </div>
     )
