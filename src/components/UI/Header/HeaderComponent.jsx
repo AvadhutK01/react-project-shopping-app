@@ -1,13 +1,13 @@
 import React from 'react'
 import './HeaderComponent.css'
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
     return (
         <header>
             <nav>
                 <div>
                     <h1>Cloths&Fashion</h1>
-                    <div className="flex justify-center items-center mr-5 cursor-pointer">
+                    <div className="flex justify-center items-center mr-5 cursor-pointer" onClick={() => props.handleModal(true)}>
                         <div className="relative">
                             <div className="t-0 absolute left-3">
                                 <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">{0}</p>
