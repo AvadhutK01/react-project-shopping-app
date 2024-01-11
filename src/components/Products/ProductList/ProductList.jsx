@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductItems from '../ProductItems/ProductItems'
-
+import './ProductList.css'
 const ProductList = () => {
     const productList = [
         {
@@ -8,11 +8,11 @@ const ProductList = () => {
             name: 'T-shirt',
             description: 'Comfortable cotton T-shirt',
             price: 19.99,
-            image: 'tshirt.jpeg',
+            image: 'tshirt.webp',
             stocks: {
-                small: 50,
-                medium: 75,
-                large: 30
+                Small: 50,
+                Medium: 75,
+                Large: 30
             }
         },
         {
@@ -22,9 +22,9 @@ const ProductList = () => {
             price: 39.99,
             image: 'jeans.png',
             stocks: {
-                small: 20,
-                medium: 40,
-                large: 25
+                Small: 20,
+                Medium: 40,
+                Large: 25
             }
         },
         {
@@ -34,9 +34,9 @@ const ProductList = () => {
             price: 49.99,
             image: 'hoodie.jpg',
             stocks: {
-                small: 15,
-                medium: 30,
-                large: 20
+                Small: 15,
+                Medium: 30,
+                Large: 20
             }
         },
         {
@@ -46,16 +46,16 @@ const ProductList = () => {
             price: 29.99,
             image: 'dressshirt.webp',
             stocks: {
-                small: 25,
-                medium: 35,
-                large: 15
+                Small: 25,
+                Medium: 35,
+                Large: 15
             }
         },
     ];
     return (
-        <div className="meals-list">
+        <div className="product-list">
             {productList.map((product) => (
-                <ProductItems key={product.Id} product={product} />
+                <ProductItems key={product.id} product={product} />
             ))}
         </div>
     )
